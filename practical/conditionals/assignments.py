@@ -67,3 +67,16 @@ elif len(num) == 3:
     print('The entered number is a three digit number')
 else:
     print('The entered number has more than three digit')'''
+
+# 8. check the number is a perfect square or not
+
+num = int(input('Enter any integer: '))
+
+if (num**0.5)*(num**0.5) == num:
+    print('The entered number is a perfect square')
+else:
+    print('The entered number is not a perfect square')
+# if int(num**0.5)*int(num**0.5) == num:
+#     print('The entered number is a perfect square')
+# else:
+#     print('The entered number is not a perfect square')
