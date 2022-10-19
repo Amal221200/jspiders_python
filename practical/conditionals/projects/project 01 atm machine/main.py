@@ -12,10 +12,10 @@ print(f'{bcolors.BOLD}Hello...\nWelcome to ICICI Bank.{bcolors.ENDC}')
 
 processing = True
 while processing:
-    #user_id = input('Enter your user id: ')
-    #user_pin = int(input('Enter your pin: '))
-    # if ID == user_id and pin == user_pin:
-    if ID == 'jack@123' and pin == 1234:
+    user_id = input(f'{bcolors.BOLD}Enter your user id: {bcolors.ENDC}')
+    user_pin = int(input(f'{bcolors.BOLD}Enter your pin: {bcolors.ENDC}'))
+    if ID == user_id and pin == user_pin:
+    #if ID == 'jack@123' and pin == 1234:
         options_processing = True
         while options_processing:
             print('These are the options available',
@@ -132,11 +132,14 @@ while processing:
                     else:
                         print(
                             f'\n{bcolors.WARNING}Enter the valid mobile number.{bcolors.ENDC}\n')
+
             elif option == 7:
                 options_processing = False
+
             else:
                 print('Enter a valid option')
                 options_processing = True
+
         processing = False
     else:
         print('Enter a valid user id and pin')
