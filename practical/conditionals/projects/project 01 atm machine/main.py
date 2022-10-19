@@ -8,7 +8,7 @@ mobile_no = 3489247857
 otp = 4545
 mini_state = 'This is your history.\nYou deposited Rs.500 on Mon Aug 2 12:45:13 2022.'
 
-print(f'{bcolors.BOLD}Hello...\nWelcome to ICICI Bank.{bcolors.ENDC}')
+print(f'{bcolors.BOLD}Hello...\nWelcome to ICICI Bank.{bcolors.ENDC}\n')
 
 processing = True
 while processing:
@@ -53,8 +53,7 @@ while processing:
                         withd_processing = False
                     elif money_to_withd <= balance:
                         balance -= money_to_withd
-                        mini_state += '\nYou withdrawn Rs.{} on {}'.format(
-                            money_to_withd, ctime())
+                        mini_state += f'\nYou withdrawn Rs.{money_to_withd} on {ctime()}.'
                         print(f'\n{bcolors.OKGREEN}You have successfully withdrawn {bcolors.UNDERLINE}Rs.{money_to_withd} on {ctime()}{bcolors.ENDC}{bcolors.OKGREEN}, and your current balance is Rs.{bcolors.UNDERLINE}{balance}{bcolors.ENDC}.\n')
                         withd_processing = False
 
@@ -72,7 +71,7 @@ while processing:
                             f'\n{bcolors.WARNING}Enter a valid amount.{bcolors.ENDC}\n')
                     else:
                         balance += money_to_dep
-                        mini_state += f'\nYou deposited Rs.{money_to_dep} on {ctime()}'
+                        mini_state += f'\nYou deposited Rs.{money_to_dep} on {ctime()}.'
                         print(
                             f'\n{bcolors.OKGREEN}You have successfully deposited {bcolors.UNDERLINE}Rs.{money_to_dep} on {ctime()}{bcolors.ENDC}{bcolors.OKGREEN}, and your current balance is {bcolors.UNDERLINE}Rs.{balance}.{bcolors.ENDC}\n')
                         dep_processing = False
