@@ -33,7 +33,7 @@ while processing:
 
             if option == 1:
                 print(
-                    f'\n{bcolors.OKBLUE}Your current balance is {bcolors.UNDERLINE}Rs.{balance}{bcolors.ENDC}.\n')
+                    f'\n{bcolors.OKBLUE}Your current balance is {bcolors.UNDERLINE}Rs.{balance}.{bcolors.ENDC}\n')
 
             elif option == 2:
                 withd_processing = True
@@ -136,12 +136,12 @@ while processing:
                 options_processing = False
 
             else:
-                print('Enter a valid option')
+                print(f'\n{bcolors.WARNING}Enter a valid option.{bcolors.ENDC}\n')
                 options_processing = True
 
         processing = False
     else:
-        print('Enter a valid user id and pin')
+        print(f'\n{bcolors.WARNING}Enter a valid user id and pin.{bcolors.ENDC}\n')
         processing = True
 
 if not processing:
