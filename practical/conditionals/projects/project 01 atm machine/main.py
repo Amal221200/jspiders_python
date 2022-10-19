@@ -69,6 +69,8 @@ while processing:
                     if money_to_dep == 0:
                         print(
                             f'\n{bcolors.WARNING}Enter a valid amount.{bcolors.ENDC}\n')
+                    elif money_to_dep % 10 != 0:
+                        print(f'\n{bcolors.WARNING}The amount should be a round figure like 10, 20, 30, 100, etc.{bcolors.ENDC}\n')
                     else:
                         balance += money_to_dep
                         mini_state += f'\nYou deposited Rs.{money_to_dep} on {ctime()}.'
