@@ -44,11 +44,44 @@ while count <= 100:
 '''
 # wap to print multiples of 7 and 5, 7 or 5 from 1 to 100
 
-count = 1
+'''count = 1
 
 while count <= 100:
     if count%7==0 and count%5==0:
         print('Multiple of 5 and 7 :-',count)
     elif count%7==0 or count%5==0:
         print('Multiple of 5 or 7 :-',count)
-    count += 1
+    count += 1'''
+
+# wap to print even numbers in the entered range
+
+'''n1 = int(input('Enter the first number: '))
+n2 = int(input('Enter the last number: '))
+
+while n1 <= n2:
+    if n1%2== 0:
+        print(n1)
+    n1+=1'''
+
+# wap to print odd numbers in the entered range
+
+'''n1 = int(input('Enter the first number: '))
+n2 = int(input('Enter the last number: '))
+
+while n1 <= n2:
+    if n1%2 != 0:
+        print(n1)
+    n1+=1'''
+
+# wap to print find the sum of the digit enter by the user
+
+num = int(input('Enter the user: '))
+sum = 0
+count = 0
+num_cpy = num
+while count < len(str(num)):
+    sum += num_cpy % 10
+    num_cpy = num_cpy//10
+    count+=1
+
+print(sum)

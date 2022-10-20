@@ -12,10 +12,10 @@ print(f'{bcolors.BOLD}Hello...\nWelcome to ICICI Bank.{bcolors.ENDC}\n')
 
 processing = True
 while processing:
-    user_id = input(f'{bcolors.BOLD}Enter your user id: {bcolors.ENDC}')
-    user_pin = int(input(f'{bcolors.BOLD}Enter your pin: {bcolors.ENDC}'))
-    if ID == user_id and pin == user_pin:
-    #if ID == 'jack@123' and pin == 1234:
+    # user_id = input(f'{bcolors.BOLD}Enter your user id: {bcolors.ENDC}')
+    # user_pin = int(input(f'{bcolors.BOLD}Enter your pin: {bcolors.ENDC}'))
+    # if ID == user_id and pin == user_pin:
+    if ID == 'jack@123' and pin == 1234:
         options_processing = True
         while options_processing:
             print('These are the options available',
@@ -30,11 +30,11 @@ while processing:
 
             option = int(
                 input(f'{bcolors.UNDERLINE}Choose your option:{bcolors.ENDC} '))
-
+            # code for checking balance
             if option == 1:
                 print(
                     f'\n{bcolors.OKBLUE}Your current balance is {bcolors.UNDERLINE}Rs.{balance}.{bcolors.ENDC}\n')
-
+            # code for withdrawal
             elif option == 2:
                 withd_processing = True
                 while withd_processing:
@@ -56,10 +56,10 @@ while processing:
                         mini_state += f'\nYou withdrawn Rs.{money_to_withd} on {ctime()}.'
                         print(f'\n{bcolors.OKGREEN}You have successfully withdrawn {bcolors.UNDERLINE}Rs.{money_to_withd} on {ctime()}{bcolors.ENDC}{bcolors.OKGREEN}, and your current balance is Rs.{bcolors.UNDERLINE}{balance}{bcolors.ENDC}.\n')
                         withd_processing = False
-
+            # code for mini statement
             elif option == 3:
                 print(f'\n{bcolors.OKBLUE}{mini_state}{bcolors.ENDC}\n')
-
+            # code for deposit
             elif option == 4:
                 dep_processing = True
                 while dep_processing:
@@ -70,13 +70,16 @@ while processing:
                         print(
                             f'\n{bcolors.WARNING}Enter a valid amount.{bcolors.ENDC}\n')
                     elif money_to_dep % 10 != 0:
-                        print(f'\n{bcolors.WARNING}The amount should be a round figure like 10, 20, 30, 100, etc.{bcolors.ENDC}\n')
+                        print(
+                            f'\n{bcolors.WARNING}The amount should be a round figure like 10, 20, 30, 100, etc.{bcolors.ENDC}\n')
                     else:
                         balance += money_to_dep
                         mini_state += f'\nYou deposited Rs.{money_to_dep} on {ctime()}.'
                         print(
                             f'\n{bcolors.OKGREEN}You have successfully deposited {bcolors.UNDERLINE}Rs.{money_to_dep} on {ctime()}{bcolors.ENDC}{bcolors.OKGREEN}, and your current balance is {bcolors.UNDERLINE}Rs.{balance}.{bcolors.ENDC}\n')
                         dep_processing = False
+
+            # code for change pin
             elif option == 5:
                 otp_processing = True
                 print(
@@ -90,10 +93,24 @@ while processing:
                         otp_processing = False
                         new_pin_processing = True
                         while new_pin_processing:
-                            new_pin = int(
-                                input(f'{bcolors.BOLD}Enter the new pin: {bcolors.ENDC}'))
-                            confirm_pin = int(
-                                input(f'{bcolors.BOLD}Enter the new pin again: {bcolors.ENDC}'))
+                            new_pin_validating = True
+                            confirm_pin_validating = True
+                            while new_pin_validating:
+                                new_pin = int(
+                                    input(f'{bcolors.BOLD}Enter the new 4 digit pin: {bcolors.ENDC}'))
+                                if len(str(new_pin)) != 4:
+                                    print(
+                                        f'\n{bcolors.WARNING}The pin should be four digits, try again.{bcolors.ENDC}\n')
+                                else:
+                                    new_pin_validating = False
+                            while confirm_pin_validating:
+                                confirm_pin = int(
+                                    input(f'{bcolors.BOLD}Enter the new 4 digit pin again: {bcolors.ENDC}'))
+                                if len(str(confirm_pin)) != 4:
+                                    print(
+                                        f'\n{bcolors.WARNING}The pin should be four digits, try again.{bcolors.ENDC}\n')
+                                else:
+                                    confirm_pin_validating = False
                             if new_pin == confirm_pin:
                                 pin = new_pin
                                 print(
@@ -106,6 +123,7 @@ while processing:
                         print(
                             f'\n{bcolors.WARNING}Enter the valid OTP.{bcolors.ENDC}\n')
 
+            # code for changing mobile number
             elif option == 6:
                 print(
                     f'\n{bcolors.OKBLUE}Your request to change the mobile number has been initiated.{bcolors.ENDC}\n')
@@ -127,16 +145,20 @@ while processing:
                             if user_otp == otp:
                                 mb_otp_processing = False
                                 mobile_no = user_ph_no
-                                print(f'\n{bcolors.OKGREEN}Your mobile no. has been successfully changed.{bcolors.ENDC}\n')
+                                print(
+                                    f'\n{bcolors.OKGREEN}Your mobile no. has been successfully changed.{bcolors.ENDC}\n')
                             else:
-                                print(f'\n{bcolors.WARNING}Enter the valid otp, try again.{bcolors.ENDC}\n')
+                                print(
+                                    f'\n{bcolors.WARNING}Enter the valid otp, try again.{bcolors.ENDC}\n')
                     else:
                         print(
                             f'\n{bcolors.WARNING}Enter the valid mobile number.{bcolors.ENDC}\n')
 
+            # code for exit
             elif option == 7:
                 options_processing = False
 
+            # code for invalid option
             else:
                 print(f'\n{bcolors.WARNING}Enter a valid option.{bcolors.ENDC}\n')
                 options_processing = True
