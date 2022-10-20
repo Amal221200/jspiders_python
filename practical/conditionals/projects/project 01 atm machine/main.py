@@ -1,7 +1,7 @@
 from time import ctime
 from colors import bcolors
 
-ID = 'jack@123'
+ID = 'amal@123'
 pin = 1234
 balance = 1500
 mobile_no = 3489247857
@@ -12,10 +12,10 @@ print(f'{bcolors.BOLD}Hello...\nWelcome to ICICI Bank.{bcolors.ENDC}\n')
 
 processing = True
 while processing:
-    # user_id = input(f'{bcolors.BOLD}Enter your user id: {bcolors.ENDC}')
-    # user_pin = int(input(f'{bcolors.BOLD}Enter your pin: {bcolors.ENDC}'))
-    # if ID == user_id and pin == user_pin:
-    if ID == 'jack@123' and pin == 1234:
+    user_id = input(f'{bcolors.BOLD}Enter your user id: {bcolors.ENDC}')
+    user_pin = int(input(f'{bcolors.BOLD}Enter your pin: {bcolors.ENDC}'))
+    if ID == user_id and pin == user_pin:
+    # if ID == 'amal@123' and pin == 1234:
         options_processing = True
         while options_processing:
             print('These are the options available',
