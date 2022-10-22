@@ -89,7 +89,7 @@ print(d)'''
 
 # 12. extract all the numbers in the strings an print the sum of the digits 
 
-s = 'jacaob.smith12345@gmail.com'
+s = 'jacob.smith12345@gmail.com'
 
 summation = 0
 index = 0

@@ -122,11 +122,11 @@ else:
 
 # library charge
 
-days = int(input('Enter the number of days you had the book: '))
+'''days = int(input('Enter the number of days you had the book: '))
 
 charge = 0
 
-start = 1
+start = 1'''
 # while start <= days:
 #     if start <= 5:
 #         charge += 2
@@ -140,7 +140,7 @@ start = 1
 
 # print(f'The total charge is {charge}')
 
-if days > 15:
+'''if days > 15:
     days_to_charge = days-15
     charge += days_to_charge*5
     days -= days_to_charge
@@ -158,4 +158,76 @@ if 5<= days <= 10:
 if 1<= days<= 5:
     charge += days*2
 
-print(charge)
+print(charge)'''
+
+# rickshaw bill
+
+'''kms = int(input('Enter the no. of km: '))
+charge = 0
+count = 1
+if kms > 0:
+    while count <= kms:
+        if count <=10:
+            charge += 11
+        elif 11 <= count <= 100:
+            charge += 10
+        else:
+            charge += 9
+        count += 1
+else:
+    charge = 0
+
+print(f'your charge is {charge}')'''
+
+# electric bill
+
+'''units = int(input('Enter the no. of units: '))
+charge = 0
+count = 1
+if units > 0:
+    while count <= units:
+        if count <= 100:
+            charge += 0
+        elif count <= 300:
+            charge += 2
+        else:
+            charge += 5
+        count += 1
+else:
+    charge = 0
+
+print(f'your charge is {charge}')'''
+
+# print the extentions of the filename in the list
+
+'''files = ['youtube.txt', 'yahoo.pdf',
+         'microsoft.doc', 'apple.xls', 'amazon.xml']
+index = 0
+while index < len(files):
+    file = files[index]
+    print(file[-4:])
+    index += 1'''
+
+# print the extentions of the filename in the list
+
+'''files = ['youtube.txt', 'amazon.pdf',
+         'facebook.pdf', 'google.pdf', 'apple.doc']
+index = 0
+while index < len(files):
+    file = files[index]
+    if file[-3:] == 'pdf':
+        print(file)
+    index += 1'''
+
+# extract number values from the given list and add into a new list
+
+l = [1,2.0, 4+4j, (1,2,3), [1,2,3], '1,2,3,', {1,2,3}]
+new_list = []
+index = 0
+
+while index < len(l):
+    if isinstance(l[index],(int, float, complex)):
+        new_list.append(l[index])
+    index+=1
+
+print(new_list)
