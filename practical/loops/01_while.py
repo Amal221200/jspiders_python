@@ -74,7 +74,7 @@ while n1 <= n2:
     n1+=1'''
 
 # wap to print find the sum of the digit enter by the user
-
+'''
 num = int(input('Enter the user: '))
 sum = 0
 count = 0
@@ -85,3 +85,77 @@ while count < len(str(num)):
     count+=1
 
 print(sum)
+'''
+
+# password validator
+'''
+password = input('Enter your password: ')
+
+index, upper, lower, spl, number, space = (0,0,0,0,0, 0)
+
+if len(password) >= 8:
+
+    while index < len(password):
+        if password[index] == ' ':
+            space +=1
+            break
+        elif 'A' <= password[index] <= 'Z':
+            upper += 1
+        elif 'a' <= password[index] <= 'z':
+            lower += 1
+        elif '0' <= password[index] <= '9':
+            number += 1
+        else:
+            spl += 1
+
+        index += 1
+
+    if space != 0:
+        print('Space is not allowed.')
+    elif number >= 1 and upper >= 1 and lower >= 1 and spl >= 1:
+        print('It is a valid password.')
+    else:
+        print('The password must contain atleast one uppercase, lowercase, number and special character.')
+else:
+    print('The pasword should be atleast 8 char')'''
+
+
+# library charge
+
+days = int(input('Enter the number of days you had the book: '))
+
+charge = 0
+
+start = 1
+# while start <= days:
+#     if start <= 5:
+#         charge += 2
+#     elif start <= 10:
+#         charge += 3
+#     elif start <= 15:
+#         charge += 4
+#     else:
+#         charge += 5
+#     start += 1
+
+# print(f'The total charge is {charge}')
+
+if days > 15:
+    days_to_charge = days-15
+    charge += days_to_charge*5
+    days -= days_to_charge
+    
+if 10 <= days <= 15:
+    days_to_charge = days-10
+    charge += days_to_charge*4
+    days-=days_to_charge
+
+if 5<= days <= 10:
+    days_to_charge = days-5
+    charge += days_to_charge*3
+    days-=days_to_charge
+
+if 1<= days<= 5:
+    charge += days*2
+
+print(charge)
