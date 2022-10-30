@@ -5,12 +5,12 @@ def squareSum(num):
         sum += int(str(num)[i])**2
     return sum
 
-for num in range(1, 101):
+for num in range(1, 10001):
     n = num    
     while n != 1 or n != 7:
         n = squareSum(n)
         if n==1 or n==7:
-            print(num)
+            print(num, end=',')
             break
         elif n < 10:
             break
